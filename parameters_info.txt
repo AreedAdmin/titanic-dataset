@@ -1,0 +1,74 @@
+PassengerId
+
+Description: A unique, sequential identifier assigned to each passenger.
+Usage: Primarily useful to keep track of records; not predictive for survival analysis.
+
+
+Survived
+
+Description: Binary indicator denoting survival (1) or death (0).
+Usage: This is the target variable in most Titanic classification models. Techniques such as Logistic Regression, Decision Trees, or Random Forests usually predict this outcome.
+
+
+Pclass
+
+Description: Passenger ticket class, typically 1, 2, or 3.
+Usage: Strongly correlated with survival because first-class passengers had better access to lifeboats and resources. Used as a categorical feature in classification models.
+
+
+Name
+
+Description: Full name of the passenger, including titles (e.g., “Mr.”, “Mrs.”, “Miss.”).
+Usage: Often not used directly in raw form for modeling. However, extracting titles (e.g., “Mr.”, “Mrs.”) can be helpful as a feature for imputing age or predicting survival.
+
+
+Sex
+
+Description: Passenger gender, usually recorded as male or female.
+Usage: Extremely influential for survival prediction. Women generally had a higher chance of survival. In frameworks like scikit-learn, convert to numeric form (e.g., 0 or 1) via label encoding or one-hot encoding.
+
+
+Age
+
+Description: Age in years; fractional if under 1 year (e.g., 0.42).
+Usage: Another key feature. Often includes missing values that need imputing. Techniques include:
+Mean/Median Imputation (simple approach),
+Model-based Imputation (e.g., using regression or k-NN).
+
+
+SibSp
+
+Description: Number of siblings or spouses aboard the Titanic with the passenger.
+Usage: Helps indicate family size and structure. Can be combined with Parch to form a “Family Size” feature for some algorithms.
+
+
+Parch
+
+Description: Number of parents or children aboard the Titanic with the passenger.
+Usage: Also informs family grouping. Family-related features often correlate with survival rates.
+
+
+Ticket
+
+Description: Alphanumeric ticket identifier.
+Usage: Not typically used directly for survival prediction. Some advanced feature engineering might examine ticket prefixes to see if they correlate with socio-economic status or group travel.
+
+
+Fare
+
+Description: Passenger fare paid for the ticket.
+Usage: Often correlates with class and wealth. Typically treated as a numeric continuous variable in modeling. Check for outliers and consider binning (low, medium, high) if it suits your model.
+
+
+Cabin
+
+Description: Cabin number(s) assigned to the passenger, if available.
+Usage: Many missing values. If available, cabin location (e.g., deck letter) might reflect socioeconomic status or proximity to lifeboats, thus correlating with survival. Techniques include:
+Marking missing cabins as “Unknown” in a categorical approach,
+Extracting deck letters (A, B, C, etc.) as a new categorical feature.
+
+
+Embarked
+
+Description: Port of embarkation, usually C (Cherbourg), Q (Queenstown), or S (Southampton).
+Usage: Indicates passenger’s port of origin, which may reflect socio-economic factors or travel patterns. Handled as a categorical feature (one-hot encoding or label encoding).
