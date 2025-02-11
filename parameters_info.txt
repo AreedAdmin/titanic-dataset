@@ -57,7 +57,7 @@ Usage: Not typically used directly for survival prediction. Some advanced featur
 Fare
 
 Description: Passenger fare paid for the ticket.
-Usage: Often correlates with class and wealth. Typically treated as a numeric continuous variable in modeling. Check for outliers and consider binning (low, medium, high) if it suits your model.
+Usage: Often cploorrelates with class and wealth. Typically treated as a numeric continuous variable in modeling. Check for outliers and consider binning (low, medium, high) if it suits your model.
 
 
 Cabin
